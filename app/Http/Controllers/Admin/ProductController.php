@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Yajra\DataTables\DataTables;
 use App\Http\Controllers\Controller;
+use Spatie\Permission\Traits\HasRoles;
+use App\Models\Category;
 use QCod\AppSettings\Setting\AppSettings;
 
 class ProductController extends Controller
@@ -175,41 +177,48 @@ class ProductController extends Controller
      */
     public function expired(Request $request){
         $title = "expired Products";
+            
         if($request->ajax()){
-            $products = Purchase::whereDate('expiry_date', '<=', Carbon::now())->get();
+            $currentDate = Carbon::now()->format('Y-m-d');
+            $products = Purchase::with(['Category'])
+                ->whereDate('expiry_date', '<=', $currentDate)
+                ->get();
             return DataTables::of($products)
                 ->addColumn('product',function($product){
                     $image = '';
-                    if(!empty($product->purchase)){
+                    if(!empty($product)){
                         $image = null;
-                        if(!empty($product->purchase->image)){
+                        if(!empty($product->image)){
                             $image = '<span class="avatar avatar-sm mr-2">
-                            <img class="avatar-img" src="'.asset("storage/purchases/".$product->purchase->image).'" alt="image">
+                            <img class="avatar-img" src="'.asset("storage/purchases/".$product->image).'" alt="image">
                             </span>';
                         }
-                        return $product->purchase->product. ' ' . $image;
+                        return $product->product. ' ' . $image;
                     }
                 })
 
                 ->addColumn('category',function($product){
-                    $category = null;
-                    if(!empty($product->purchase->category)){
-                        $category = $product->purchase->category->name;
+                    $category = "hello";
+                    if(!empty($product->category)){
+                        $category = $product->category->name;
                     }
                     return $category;
                 })
-                ->addColumn('price',function($product){
-                    return settings('app_currency','$').' '. $product->price;
+                ->addColumn('price',function($purchase){
+                    return settings('app_currency','$').' '. $purchase->cost_price;
                 })
                 ->addColumn('quantity',function($product){
-                    if(!empty($product->purchase)){
-                        return $product->purchase->quantity;
+                    if(!empty($product)){
+                        return $product->quantity;
                     }
                 })
                 ->addColumn('expiry_date',function($product){
-                    if(!empty($product->purchase)){
-                        return date_format(date_create($product->purchase->expiry_date),'d M, Y');
+                    if(!empty($product)){
+                        return date_format(date_create($product->expiry_date),'d M, Y');
                     }
+                })
+                ->addColumn('discount', function($discount){
+                    return $discount->discount ?? '0%';
                 })
                 ->addColumn('action', function ($row) {
                     $editbtn = '<a href="'.route("products.edit", $row->id).'" class="editbtn"><button class="btn btn-primary"><i class="fas fa-edit"></i></button></a>';
@@ -225,6 +234,8 @@ class ProductController extends Controller
                 })
                 ->rawColumns(['product','action'])
                 ->make(true);
+        // dd($product->purchase->category);
+
         }
 
         return view('admin.products.expired',compact(

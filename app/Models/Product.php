@@ -8,10 +8,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
-    use HasFactory,SoftDeletes;
+    use HasFactory; // permet d'utiliser les méthodes de la classe HasFactory
+    use SoftDeletes; // permet de supprimer les enregistrements sans les supprimer de la base de données
     protected $fillable = [
-        'purchase_id','price',
-        'discount','description',
+        'purchase_id',
+        'price',
+        'discount',
+        'description',
     ];
 
     public function purchase(){

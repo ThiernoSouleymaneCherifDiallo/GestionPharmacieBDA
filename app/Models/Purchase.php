@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Purchase extends Model
 {
     use HasFactory;
+    // model reprensenatant les achats de produits
 
     protected $fillable = [
         'product','category_id','supplier_id',

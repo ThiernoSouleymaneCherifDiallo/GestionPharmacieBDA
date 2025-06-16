@@ -6,10 +6,10 @@
 
 @push('page-header')
 <div class="col-sm-12">
-	<h3 class="page-title">Add Product</h3>
+	<h3 class="page-title">Ajouter Produit</h3>
 	<ul class="breadcrumb">
 		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-		<li class="breadcrumb-item active">Add Product</li>
+		<li class="breadcrumb-item active">Ajouter Produit</li>
 	</ul>
 </div>
 @endpush
@@ -20,7 +20,7 @@
 	<div class="col-sm-12">
 		<div class="card">
 			<div class="card-body custom-edit-service">
-                <!-- Add Product -->
+                <!-- Ajouter Produit -->
                 <form method="post" enctype="multipart/form-data" id="update_service" action="{{route('products.store')}}">
                     @csrf
                     <div class="service-fields mb-3">
@@ -43,14 +43,14 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label>Selling Price<span class="text-danger">*</span></label>
+                                    <label>Prix de vente<span class="text-danger">*</span></label>
                                     <input class="form-control" type="text" name="price" value="{{old('price')}}">
                                 </div>
                             </div>
 
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label>Discount (%)<span class="text-danger">*</span></label>
+                                    <label>Remise (%)<span class="text-danger">*</span></label>
                                     <input class="form-control" type="text" name="discount" value="0">
                                 </div>
                             </div>

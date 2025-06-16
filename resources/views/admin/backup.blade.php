@@ -2,19 +2,19 @@
 
 @push('page-header')
 <div class="col-sm-7 col-auto">
-	<h3 class="page-title">Backups</h3>
+	<h3 class="page-title">Sauvegardes</h3>
 	<ul class="breadcrumb">
 		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-		<li class="breadcrumb-item active">App Backups</li>
+		<li class="breadcrumb-item active">Ajouter Sauvegardes</li>
 	</ul>
 </div>
 <div class="col-sm-5 col">
     <form action="{{route('backup.store')}}" method="post">
         @csrf
         @method("PUT")
-        <button class="btn btn-primary float-right mt-2" type="submit">Create Backup</button>
+        <button class="btn btn-primary float-right mt-2" type="submit">Creer Un Sauvegardes</button>
     </form>
-	{{-- <a href="#add_categories" data-toggle="modal" class="btn btn-primary float-right mt-2">Add Category</a> --}}
+	{{-- <a href="#add_categories" data-toggle="modal" class="btn btn-primary float-right mt-2">Ajouter une Categorie</a> --}}
 </div>
 
 @endpush

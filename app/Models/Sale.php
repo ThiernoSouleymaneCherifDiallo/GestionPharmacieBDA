@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Sale extends Model
 {
     use HasFactory,SoftDeletes;
-
+    // model reprensenatant les ventes de produits
     protected $fillable = [
         'product_id','quantity','total_price'
     ];

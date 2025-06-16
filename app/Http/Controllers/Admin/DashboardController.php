@@ -17,7 +17,7 @@ class DashboardController extends Controller
         $total_purchases = Purchase::where('expiry_date','!=',Carbon::now())->count();
         $total_categories = Category::count();
         $total_suppliers = Supplier::count();
-        $total_sales = Sale::count();
+        $total_sales = Sale::count(); // Count total ventes
         
         $pieChart = app()->chartjs
                 ->name('pieChart')

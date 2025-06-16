@@ -15,7 +15,7 @@
 	</ul>
 </div>
 <div class="col-sm-5 col">
-	<a href="#add_categories" data-toggle="modal" class="btn btn-primary float-right mt-2">Add Category</a>
+	<a href="#add_categories" data-toggle="modal" class="btn btn-primary float-right mt-2">Ajouter Categorie</a>
 </div>
 @endpush
 
@@ -28,8 +28,8 @@
 					<table id="category-table" class="datatable table table-striped table-bordered table-hover table-center mb-0">
 						<thead>
 							<tr style="boder:1px solid black;">
-								<th>Name</th>
-								<th>Created date</th>
+								<th>Nom</th>
+								<th>date de creation</th>
 								<th class="text-center action-btn">Actions</th>
 							</tr>
 						</thead>
@@ -48,7 +48,7 @@
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Add Category</h5>
+				<h5 class="modal-title">Ajouter Categorie</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -59,12 +59,12 @@
 					<div class="row form-row">
 						<div class="col-12">
 							<div class="form-group">
-								<label>Category</label>
+								<label>Categorie</label>
 								<input type="text" name="name" class="form-control">
 							</div>
 						</div>
 					</div>
-					<button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+					<button type="submit" class="btn btn-primary btn-block">Enregistrer</button>
 				</form>
 			</div>
 		</div>

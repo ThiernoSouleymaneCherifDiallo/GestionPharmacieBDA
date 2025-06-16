@@ -5,11 +5,11 @@
 
 @push('page-header')
 <div class="col-sm-12">
-	<h3 class="page-title">General Settings</h3>
+	<h3 class="page-title">Parametres General</h3>
 	<ul class="breadcrumb">
 		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-		<li class="breadcrumb-item"><a href="javascript:(0)">Settings</a></li>
-		<li class="breadcrumb-item active">General Settings</li>
+		<li class="breadcrumb-item"><a href="javascript:(0)">Parametres</a></li>
+		<li class="breadcrumb-item active">Parametres General</li>
 	</ul>
 </div>
 @endpush

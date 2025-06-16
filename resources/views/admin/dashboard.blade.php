@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="dash-widget-info">
-                    <h6 class="text-muted">Today Sales Cash</h6>
+                    <h6 class="text-muted">Recette du jour</h6>
                     <div class="progress progress-sm">
                         <div class="progress-bar bg-primary w-50"></div>
                     </div>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="dash-widget-info">
                     
-                    <h6 class="text-muted">Product Categories</h6>
+                    <h6 class="text-muted">Catégories de produits</h6>
                     <div class="progress progress-sm">
                         <div class="progress-bar bg-success w-50"></div>
                     </div>
@@ -71,7 +71,7 @@
                 </div>
                 <div class="dash-widget-info">
                     
-                    <h6 class="text-muted">Expired Products</h6>
+                    <h6 class="text-muted">Produit Expiré</h6>
                     <div class="progress progress-sm">
                         <div class="progress-bar bg-danger w-50"></div>
                     </div>
@@ -92,7 +92,7 @@
                 </div>
                 <div class="dash-widget-info">
                     
-                    <h6 class="text-muted">System Users</h6>
+                    <h6 class="text-muted">Utilisateur du systeme</h6>
                     <div class="progress progress-sm">
                         <div class="progress-bar bg-warning w-50"></div>
                     </div>
@@ -105,17 +105,17 @@
     <div class="col-md-12 col-lg-6">
         <div class="card card-table p-3">
             <div class="card-header">
-                <h4 class="card-title ">Today Sales</h4>
+                <h4 class="card-title ">Ventes du jour</h4>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table id="sales-table" class="datatable table table-hover table-center mb-0">
                         <thead>
                             <tr>
-                                <th>Medicine</th>
-                                <th>Quantity</th>
-                                <th>Total Price</th>
-                                <th>Date</th>
+                            <th>Médicament</th>
+                            <th>Quantité</th>
+                            <th>Prix total</th>
+                            <th>Date</th>
                             </tr>
                         </thead>
                         <tbody>

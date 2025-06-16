@@ -40,7 +40,7 @@
 			<div class="dropdown-menu notifications">
 				<div class="topnav-dropdown-header">
 					<span class="notification-title">Notifications</span>
-					<a href="{{route('mark-as-read')}}" class="clear-noti">Mark All As Read </a>
+					<a href="{{route('mark-as-read')}}" class="clear-noti">Marquer Comme lu </a>
 				</div>
 				<div class="noti-content">
 					<ul class="notification-list">
@@ -52,10 +52,10 @@
 											<img class="avatar-img rounded-circle" alt="Product image" src="{{asset('storage/purchases/'.$notification['image'])}}">
 										</span>
 										<div class="media-body">
-											<h6 class="text-danger">Stock Alert</h6>
+											<h6 class="text-danger">Stock Alerte</h6>
 											<p class="noti-details">
 												<span class="noti-title">{{$notification->data['product_name']}} is only {{$notification->data['quantity']}} left.</span>
-												<span>Please update the purchase quantity </span>
+												<span>S'il vous plait mettez à jour les quantités d'achat </span>
 											</p>
 											
 											<p class="noti-time"><span class="notification-time">{{$notification->created_at->diffForHumans()}}</span></p>
